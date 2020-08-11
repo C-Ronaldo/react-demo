@@ -1,0 +1,53 @@
+.home-view {
+    width: 100%;
+    .statistics {
+        display: flex;
+        justify-content: space-around;
+        .data-block-root {
+            display: inline-flex;
+            flex: 1;
+            height: 80px;
+            align-items: stretch;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #fff;
+            margin-right: 16px;
+            .bgimg {
+                width: 100%;
+                //background: url(./cirle.png) no-repeat top right;
+                background-size: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                .icon {
+                    text-align: center;
+                    width: 60px;
+                    font-size: 42px;
+                    padding-left: 15px;
+                    color: #fff;
+                    //opacity: .5;
+                    //background: @primary-color;
+                }
+        
+                .message {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 1;
+                    color: #fff;
+        
+                    .count {
+                        font-size: 30px;
+                    }
+        
+                    .tip {
+                        font-size: 16px;
+                    }
+                }
+        
+            }
+        }
+    }
+}

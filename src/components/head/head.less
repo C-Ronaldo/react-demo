@@ -1,0 +1,40 @@
+@headerHeight: 64px;
+@primary-color: #1890ff;
+.header {
+    padding-right: 16px;
+    box-sizing: border-box;
+    background-color: @primary-color;
+    background-image: url('./topbgBak.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    line-height: @headerHeight;
+    .trigger {
+        font-size: 20px;
+        cursor: pointer;
+        transition: all .3s;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    .right {
+        float: right;
+        display: block;
+        height: 100%;
+        padding-right: 16px;
+        .action {
+            display: inline-block;
+            vertical-align: middle;
+            .user-info {
+                cursor: pointer;
+                align-items: center;
+                display: flex;
+            }
+        }
+
+    }
+}
+.color-picker {
+    display: inline-block;
+    margin-right: 5px;
+}
