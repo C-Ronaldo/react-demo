@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Tooltip, Avatar, Menu, Dropdown } from 'antd';
+import { Layout, Tooltip, Menu, Dropdown } from 'antd';
 import less from "less";
 import "./head.less";
 import {Link} from "react-router-dom";

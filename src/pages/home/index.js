@@ -3,6 +3,7 @@ import {Row, Col} from "antd";
 import {UserAddOutlined} from '@ant-design/icons';
 import CountUp from "react-countup";
 import Map from "./parts/map";
+import Bar from "./parts/bar";
 import "./home.less";
 class Home extends React.Component{
     state = {
@@ -49,6 +50,7 @@ class Home extends React.Component{
                     </Col>
                     <Col span={12}>
                         <div style={colStyle}>
+                            <Bar />
                         </div>
                     </Col>
                 </Row>

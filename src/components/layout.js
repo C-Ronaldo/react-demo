@@ -1,22 +1,25 @@
-import React from "react";
+import React, {Suspense} from "react";
 import Head from "./head";
 import SiderMenu from "./sider";
-import {Route} from "react-router-dom";
+import {Route, Redirect} from "react-router-dom";
 import { Layout } from 'antd';
 import Home from "@/pages/home/index";
+import User from "@/pages/table/index";
+import {getItem} from "@/utils/auth";
 
 const { Content } = Layout;
 
 class LayoutComponent extends React.Component {
   state = {
-    collapsed: false
+    collapsed: false,
+    isLogin: false
   }
   toggleChange = (val) => {
     this.setState({collapsed: val});
-    console.log("toggleChange", val)
   }
   render() {
     const {collapsed} = this.state;
+    const isLogin = getItem('token') ? true : false;
     return (
       <Layout className="layout-custom-trigger">
         <SiderMenu collapsed={collapsed}/>
@@ -30,7 +33,14 @@ class LayoutComponent extends React.Component {
               minHeight: 280,
             }}
           >
-           <Route path="/" component={Home}></Route>
+            {
+              isLogin?(
+                <Suspense>
+                  <Route path="/" component={Home}></Route>
+                  <Route path="/user" component={User}></Route>
+                </Suspense>
+              ): (<Redirect to="/login" />)
+            }
           </Content>
         </Layout>
       </Layout>
